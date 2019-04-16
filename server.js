@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const bcrypt = require('bcrypt-nodejs');
 
 const app = express();
 app.listen(3000, () => {
@@ -29,7 +30,7 @@ const database = {
 			id: '124',
 			name: 'sally',
 			email: 'sally@email.com',
-			password: 'bananas',
+			password: 'icecream',
 			entries: 0,
 			joined: new Date()
 		}
@@ -92,8 +93,16 @@ app.get('/', (req, res) => {
 	res.json(database.users);
 })
 
-
-
+// bcrypt.hash(password, null, null, (err, hash) => {
+//     	console.log(hash);
+// 	});
+// // Load hash from your password DB.
+// bcrypt.compare("bacon", hash, function(err, res) {
+//     // res == true
+// });
+// bcrypt.compare("veggies", hash, function(err, res) {
+//     // res = false
+// });
 
 
 
