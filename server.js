@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt-nodejs');
+const cors = require('cors');
 
 const app = express();
 const PORT = 3001;
@@ -8,6 +9,7 @@ app.listen(PORT, () => {
 	console.log('Server is running on port: ', PORT);
 });
 app.use(bodyParser.json());
+app.use(cors());
 
 /*
 / --> res = this is working
@@ -24,15 +26,15 @@ const database = {
 			name: 'john',
 			email: 'john@email.com',
 			password: 'cookies',
-			entries: 0,
+			faces: 0,
 			joined: new Date()
 		},
 		{
 			id: '124',
 			name: 'sally',
 			email: 'sally@email.com',
-			password: 'icecream',
-			entries: 0,
+			password: 'bananas',
+			faces: 0,
 			joined: new Date()
 		}
 	]
@@ -40,7 +42,7 @@ const database = {
 
 app.post('/signin', (req, res) => {
 	if(req.body.email === database.users[0].email && req.body.password === database.users[0].password){
-		res.json('success!');
+		res.json(database.users[0]);
 	}
 	else{
 		res.status(400).json('error logging in');
@@ -54,7 +56,7 @@ app.post('/register', (req, res) => {
 		name: name,
 		email: email,
 		password: password,
-		entries: 0,
+		faces: 0,
 		joined: new Date()
 	}
 	database.users.push(new_user);
@@ -76,15 +78,15 @@ app.get('/profile/:id', (req, res) => {
 })
 
 app.put('/image', (req, res) => {
-	const {id} = req.body;
+	const {id, faces} = req.body;
 	let found = false;
-	database.users.forEach(user => {
-		if(user.id === id){
+	for(let i = 0; i < database.users.length; i++){
+		if(database.users[i].id === id){
 			found = true;
-			user.entries++;
-			return res.json(user.entries);
+			database.users[i].faces = database.users[i].faces + faces;
+			return res.json(database.users[i].faces);
 		}
-	})
+	}
 	if(!found){
 		res.json('no such');
 	}
