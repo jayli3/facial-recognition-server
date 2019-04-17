@@ -2,6 +2,17 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
+const knex = require('knex')
+
+knex({
+  client: 'pg',
+  connection: {
+    host : '127.0.0.1',
+    user : 'apple',
+    password : '',
+    database : 'facial-recognition'
+  }
+});
 
 const app = express();
 const PORT = 3001;
