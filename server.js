@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt-nodejs');
-const cors = require('cors');
+const cors2 = require('cors');
 const knex = require('knex');
 
 const registerC = require('./Controllers/Register');
@@ -25,7 +25,7 @@ app.listen(PORT, () => {
 	console.log('Server is running on port: ', PORT);
 });
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors2());
 
 app.post('/signin', (req, res) => {signinC.handleSignIn(req, res, db, bcrypt)});
 app.post('/register', (req, res) => {registerC.handleRegister(req, res, db, bcrypt)});
