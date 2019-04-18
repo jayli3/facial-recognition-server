@@ -7,7 +7,9 @@ const knex = require('knex')
 const registerC = require('./Controllers/Register');
 const signinC = require('./Controllers/SignIn');
 const imageC = require('./Controllers/Image');
+const imageUrl = require('./Controllers/ImageUrl');
 const profileC = require('./Controllers/Profile');
+
 
 const db = knex({
   client: 'pg',
@@ -31,6 +33,7 @@ app.post('/signin', (req, res) => {signinC.handleSignIn(req, res, db, bcrypt)});
 app.post('/register', (req, res) => {registerC.handleRegister(req, res, db, bcrypt)});
 app.get('/profile/:id', (req, res) => {profileC.handleProfile(req, res, db)});
 app.put('/image', (req, res) => {imageC.handleImage(req, res, db)});
+app.post('/imageUrl', (req, res) => {imageUrl.handleApiCall(req, res)});
 
 
 
