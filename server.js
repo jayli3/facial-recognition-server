@@ -14,10 +14,8 @@ const profileC = require('./Controllers/Profile');
 const db = knex({
   client: 'pg',
   connection: {
-    host : '127.0.0.1',
-    user : 'apple',
-    password : '',
-    database : 'facial-recognition'
+    connectionString: process.env.postgresql-fluffy-81121,
+    ssl: true
   }
 });
 
