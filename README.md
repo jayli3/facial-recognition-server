@@ -15,5 +15,4 @@ install postgresql with brew<br>
 - to drop: dropdb <database_name><br>
 - to list: psql -l
 
-#
-Hosted on Heroku
+### Hosted on Heroku
