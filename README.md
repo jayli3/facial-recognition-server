@@ -3,7 +3,7 @@ Node.js server to handle our facial recognition web app.
 
 To complete this without the hassel of worrying about CSS, I used a node package called `tachyons` toolkit to help with the styling.
 
-**API Used:** Clarifai
+**API Used:** Clarifai<br>
 Server is deployed on Heroku.
 
 ## Goals
@@ -12,7 +12,7 @@ Server is deployed on Heroku.
 - Know how and when to use middlewares with `Express.js` such as `Knex.js`, `Body-Parser` and `cors`
 - Be able to use relational databases to store key information about the user, database used here was `PostgreSQL`
 
-###Sample Code:
+### Sample Code:
 ----
 Below is a code snippet to illustrate the usage of different technologies.
 
@@ -92,7 +92,7 @@ Install `PostgreSQL` with brew.
 - to drop: dropdb &lt;database_name&gt;
 - to list: psql -l
 
-##NPM Packages Used:
+## NPM Packages Used:
 ```json
 "dependencies": {
     "bcrypt-nodejs": "0.0.3",
