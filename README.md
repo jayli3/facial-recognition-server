@@ -1,8 +1,6 @@
 # facial-recognition-server
 Node.js server to handle our facial recognition web app.
 
-To complete this without the hassel of worrying about CSS, I used a node package called `tachyons` toolkit to help with the styling.
-
 **API Used:** Clarifai<br>
 Server is deployed on Heroku.
 
