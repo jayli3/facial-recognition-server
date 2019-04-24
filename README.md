@@ -1,4 +1,6 @@
 # facial-recognition-server
+`Live:` https://jayli3.github.io/facial-recognition-web-app/
+
 Node.js server to handle our facial recognition web app.
 
 **API Used:** Clarifai<br>
