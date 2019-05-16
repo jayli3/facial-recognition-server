@@ -1,5 +1,5 @@
 # facial-recognition-server
-`Live:` https://jayli3.github.io/facial-recognition-web-app/
+`Live:` https://jayli3n.github.io/facial-recognition-web-app/
 
 Node.js server to handle our facial recognition web app.
 
@@ -42,7 +42,7 @@ app.post('/register', (req, res) => {registerC.handleRegister(req, res, db, bcry
 app.get('/profile/:id', (req, res) => {profileC.handleProfile(req, res, db)});
 app.put('/image', (req, res) => {imageC.handleImage(req, res, db)});
 app.post('/imageUrl', (req, res) => {imageUrl.handleApiCall(req, res)});
-app.get('/', (req, res) => {res.json('Live: https://github.com/jayli3/facial-recognition-web-app')});
+app.get('/', (req, res) => {res.json('Live: https://github.com/jayli3n/facial-recognition-web-app')});
 ```
 
 
